@@ -30,7 +30,11 @@ jobs:
         run: echo Hello, world!
 
       # Custom action
-      - name: octofetch
-        uses: riteshraj-shetage/octofetch@v1
+      - uses: riteshraj-shetage/octofetch@v1
         with:
-          query_file: ".github/octofetch/demo.gql"
+          query-file: .github/octofetch/demo.gql
+          variables: |
+            {
+              "owner": "${{ github.repository_owner }}",
+              "name": "${{ github.event.repository.name }}"
+            }
