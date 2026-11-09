@@ -32,7 +32,7 @@ jobs:
       # Custom action
       - uses: riteshraj-shetage/octofetch@v1
         with:
-          query-file: .github/octofetch/demo.gql
+          query_file: .github/octofetch/demo.gql
           variables: |
             {
               "owner": "${{ github.repository_owner }}",
