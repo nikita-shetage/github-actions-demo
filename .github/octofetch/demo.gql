@@ -1,5 +1,8 @@
-query ($owner: String!, $name: String!) {
-  repository(owner: $owner, name: $name) {
+query {
+  repository(
+    owner: "${{ github.repository_owner }}"
+    name: "${{ github.event.repository.name }}"
+  ) {
     name
     description
     url
